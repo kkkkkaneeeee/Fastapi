@@ -1,0 +1,406 @@
+{
+  "serviceOffering": {
+    "industry": {
+      "text": "retail"
+    },
+    "business-challenge": {
+      "text": "customers"
+    },
+    "service-type": {
+      "question": "How would you describe what you offer?",
+      "question_name": "R1",
+      "anwser": "Service",
+      "anwserselete": "",
+      "additionalText": ""
+    },
+    "opportunity-type": {
+      "question": "How would you describe the opportunity you have?",
+      "question_name": "R2",
+      "anwser": "Disruptor",
+      "anwserselete": "b",
+      "additionalText": ""
+    },
+    "concerns": {
+      "question": "What keeps you awake at night?",
+      "question_name": "R3",
+      "anwser": "Readiness of your offering",
+      "anwserselete": "b",
+      "additionalText": ""
+    },
+    "growth-route": {
+      "question": "What do you believe is your best route to growth?",
+      "question_name": "R4",
+      "anwser": "Direct Sales",
+      "anwserselete": "b",
+      "additionalText": ""
+    },
+    "business-age": {
+      "question": "How long has your business been trading?",
+      "question_name": "R5",
+      "anwser": "3-5 years",
+      "anwserselete": "b",
+      "additionalText": ""
+    },
+    "business-size-employees": {
+      "question": "How big is your business? (Employees)",
+      "question_name": "R6",
+      "anwser": "5-15 people",
+      "anwserselete": "b",
+      "additionalText": ""
+    },
+    "business-size-revenue": {
+      "question": "How big is your business? (Annual Revenue)",
+      "question_name": "R7",
+      "anwser": "£1m - £2.5m",
+      "anwserselete": "b",
+      "additionalText": ""
+    },
+    "paying-clients": {
+      "question": "How many paying clients do you have?",
+      "question_name": "R8",
+      "anwser": "4 to 8",
+      "anwserselete": "b",
+      "additionalText": ""
+    },
+    "biggest-client-revenue": {
+      "question": "How much of your revenue does your biggest client account for?",
+      "question_name": "R9",
+      "anwser": "25-50%",
+      "anwserselete": "b",
+      "additionalText": ""
+    },
+    "revenue-type": {
+      "question": "What sort of revenue do you mainly have currently?",
+      "question_name": "R10",
+      "anwser": "Monthly recurring revenue",
+      "anwserselete": "b",
+      "additionalText": ""
+    },
+    "funding-status": {
+      "question": "How are you currently funded?",
+      "question_name": "R11",
+      "anwser": "Seed Funded",
+      "anwserselete": "b",
+      "additionalText": ""
+    },
+    "revenue-targets": {
+      "question": "What are your revenue targets in the next year?",
+      "question_name": "R12",
+      "anwser": "100%+ growth",
+      "anwserselete": "b",
+      "additionalText": ""
+    },
+    "growth-ambitions": {
+      "question": "What are your growth ambitions in the next three years?",
+      "question_name": "R13",
+      "anwser": "Regular, Steady growth",
+      "anwserselete": "b",
+      "additionalText": ""
+    },
+    "clients-needed": {
+      "question": "How many more clients do you need to achieve those growth ambitions?",
+      "question_name": "R14",
+      "anwser": "3 to 6",
+      "anwserselete": "b",
+      "additionalText": ""
+    },
+    "preferred-revenue": {
+      "question": "What sort of revenue would you be happy with as the majority of your earnings?",
+      "question_name": "R15",
+      "anwser": "Monthly recurring revenue",
+      "anwserselete": "b",
+      "additionalText": ""
+    },
+    "funding-plans": {
+      "question": "What are your future funding plans?",
+      "question_name": "R16",
+      "anwser": "VC / Angel Investment",
+      "anwserselete": "b",
+      "additionalText": ""
+    }
+  },
+  "Base camp for success (go to market GTM)": {
+    "target-niche": {
+      "question_name": "GTM1",
+      "category": "go to market",
+      "catmapping": "Profitable",
+      "question": "We know exactly which niche sector(s), and in which geographies, to target",
+      "anwser": "Strongly Disagree",
+      "score": -2
+    },
+    "pinpoint-clients": {
+      "question_name": "GTM2",
+      "category": "go to market",
+      "catmapping": "Profitable",
+      "question": "We could pinpoint specific clients right now who need our offering",
+      "anwser": "Strongly Disagree",
+      "score": -2
+    },
+    "targeted-pipeline": {
+      "question_name": "GTM3",
+      "category": "go to market",
+      "catmapping": "Repeatable",
+      "question": "We've purposely targeted the clients in our pipeline because they all share the same characteristics",
+      "anwser": "Strongly Disagree",
+      "score": -2
+    },
+    "know-buyers": {
+      "question_name": "GTM4",
+      "category": "go to market",
+      "catmapping": "Profitable",
+      "question": "We know exactly who the typical buyers, influencers & decision-makers are for our offering",
+      "anwser": "Strongly Disagree",
+      "score": -2
+    },
+    "clear-problems": {
+      "question_name": "GTM5",
+      "category": "go to market",
+      "catmapping": "Profitable",
+      "question": "We are clear on the specific problems we solve and can articulate that to everyone we speak to",
+      "anwser": "Strongly Disagree",
+      "score": -2
+    },
+    "proven-approach": {
+      "question_name": "GTM6",
+      "category": "go to market",
+      "catmapping": "Profitable",
+      "question": "We have a proven approach to secure new clients who we've never even spoken to before",
+      "anwser": "Disagree",
+      "score": -1
+    },
+    "partners-resellers": {
+      "question_name": "GTM7",
+      "category": "go to market",
+      "catmapping": "Scalable",
+      "question": "We use partners or resellers effectively to help achieve our revenue goals",
+      "anwser": "Disagree",
+      "score": -1
+    },
+    "account-management": {
+      "question_name": "GTM8",
+      "category": "go to market",
+      "catmapping": "Scalable",
+      "question": "We're in control of our biggest accounts and have a structured approach to account management",
+      "anwser": "Disagree",
+      "score": -1
+    },
+    "global-growth": {
+      "question_name": "GTM9",
+      "category": "go to market",
+      "catmapping": "Scalable",
+      "question": "We want to, and have a clear plan for how to, grow our service offering globally",
+      "anwser": "Disagree",
+      "score": -1
+    },
+    "know-competitors": {
+      "question_name": "GTM10",
+      "category": "go to market",
+      "catmapping": "Profitable",
+      "question": "We know who all of our competitors are and can articulate how our offering differs to theirs",
+      "anwser": "Disagree",
+      "score": -1
+    }
+  },
+  "Tracking the climb (Performance Metrics PM)": {
+    "commercial-performance": {
+      "question_name": "PM1",
+      "category": "performance metrics",
+      "catmapping": "Profitable",
+      "question": "We have a good grasp of our current commercial performance including revenue, gross profit, average deal value",
+      "anwser": "N/A",
+      "score": 0
+    },
+    "revenue-profit-targets": {
+      "question_name": "PM2",
+      "category": "performance metrics",
+      "catmapping": "Profitable",
+      "question": "Everyone, that needs to know, has clarity on what our revenue & profit targets are for this current financial year",
+      "anwser": "N/A",
+      "score": 0
+    },
+    "pipeline-management": {
+      "question_name": "PM3",
+      "category": "performance metrics",
+      "catmapping": "Profitable",
+      "question": "Our pipeline is managed by stages in a sales funnel, and we can use it to forecast sales for the next 12 months",
+      "anwser": "N/A",
+      "score": 0
+    },
+    "great-sale-recognition": {
+      "question_name": "PM4",
+      "category": "performance metrics",
+      "catmapping": "Profitable",
+      "question": "Everyone that is responsible for working with clients recognises what makes a great sale for this business",
+      "anwser": "N/A",
+      "score": 0
+    },
+    "three-year-targets": {
+      "question_name": "PM5",
+      "category": "performance metrics",
+      "catmapping": "Repeatable",
+      "question": "We have clarity on what our sales & profit targets need to be for the next 3 years to achieve our goals",
+      "anwser": "N/A",
+      "score": 0
+    },
+    "kpis-metrics": {
+      "question_name": "PM6",
+      "category": "performance metrics",
+      "catmapping": "Repeatable",
+      "question": "We have KPIs or metrics defined at each stage of our sales funnel leading to our ultimate targets",
+      "anwser": "Strongly Disagree",
+      "score": -2
+    }
+  },
+  "Scaling essentials (Commercial Essentials CE)": {
+    "objections-techniques": {
+      "question_name": "CE1",
+      "category": "commercial essentials",
+      "catmapping": "Profitable",
+      "question": "We know all of the objections prospects or clients may come up with, and have clear techniques to overcome them",
+      "anwser": "N/A",
+      "score": 0
+    },
+    "commercial-model": {
+      "question_name": "CE2",
+      "category": "commercial essentials",
+      "catmapping": "Scalable",
+      "question": "Our commercial model is easy to understand and makes it easy for clients to buy from us",
+      "anwser": "N/A",
+      "score": 0
+    },
+    "pricing-testing": {
+      "question_name": "CE3",
+      "category": "commercial essentials",
+      "catmapping": "Repeatable",
+      "question": "We've tested our pricing to ensure it is competitive whilst at the same time allows us to achieve our targets",
+      "anwser": "Agree",
+      "score": 1
+    },
+    "terms-conditions": {
+      "question_name": "CE4",
+      "category": "commercial essentials",
+      "catmapping": "Scalable",
+      "question": "We have terms & conditions and an SoW which can be agreed quickly and promote a win-win relationship",
+      "anwser": "Agree",
+      "score": 1
+    }
+  },
+  "Streamlining the climb (Optimal Processes OP)": {
+    "outbound-sales-approach": {
+      "question_name": "OP1",
+      "category": "optimal processes",
+      "catmapping": "Repeatable",
+      "question": "We have a proven approach to bringing new leads into this business via an outbound sales approach",
+      "anwser": "Agree",
+      "score": 1
+    },
+    "marketing-brand-awareness": {
+      "question_name": "OP2",
+      "category": "optimal processes",
+      "catmapping": "Repeatable",
+      "question": "Our marketing efforts are increasing brand awareness whilst also bringing in new regular inbound leads",
+      "anwser": "Agree",
+      "score": 1
+    },
+    "lead-qualification": {
+      "question_name": "OP3",
+      "category": "optimal processes",
+      "catmapping": "Repeatable",
+      "question": "We have a structured approach to qualifying every lead, which enables us to prioritise hot leads and say no to the wrong ones",
+      "anwser": "Agree",
+      "score": 1
+    },
+    "delivery-handoff": {
+      "question_name": "OP4",
+      "category": "optimal processes",
+      "catmapping": "Scalable",
+      "question": "Once a sale is closed, the process for handing off to the team responsible for delivery is clearly defined & understood",
+      "anwser": "Agree",
+      "score": 1
+    }
+  },
+  "Assembling the team (People, Structure & Culture PSC)": {
+    "team-structure": {
+      "question_name": "PSC1",
+      "category": "people structure culture",
+      "catmapping": "Repeatable",
+      "question": "We have the right team structure in place to support our growth ambitions",
+      "anwser": "Agree",
+      "score": 1
+    },
+    "right-people-roles": {
+      "question_name": "PSC2",
+      "category": "people structure culture",
+      "catmapping": "Repeatable",
+      "question": "We have the right people in the right roles to achieve our growth ambitions",
+      "anwser": "Agree",
+      "score": 1
+    },
+    "compensation-plans": {
+      "question_name": "PSC3",
+      "category": "people structure culture",
+      "catmapping": "Profitable",
+      "question": "We have compensation plans in place that incentivise the right behaviours",
+      "anwser": "Agree",
+      "score": 1
+    },
+    "sales-culture": {
+      "question_name": "PSC4",
+      "category": "people structure culture",
+      "catmapping": "Scalable",
+      "question": "We have a sales culture that supports our growth ambitions",
+      "anwser": "Agree",
+      "score": 1
+    },
+    "performance-management": {
+      "question_name": "PSC5",
+      "category": "people structure culture",
+      "catmapping": "Scalable",
+      "question": "We have a performance management system in place that supports our growth ambitions",
+      "anwser": "Agree",
+      "score": 1
+    }
+  },
+  "Toolbox for success (Systems & Tools ST)": {
+    "central-shared-drive": {
+      "question_name": "ST1",
+      "category": "systems tools",
+      "catmapping": "Scalable",
+      "question": "Anyone involved in sales has access to a central shared drive, where they can easily access any information they might need",
+      "anwser": "Agree",
+      "score": 1
+    },
+    "client-collateral": {
+      "question_name": "ST2",
+      "category": "systems tools",
+      "catmapping": "Profitable",
+      "question": "Our collateral to share with clients paints us in the best possible light and sets us apart from the competition",
+      "anwser": "Agree",
+      "score": 1
+    },
+    "capability-demonstration": {
+      "question_name": "ST3",
+      "category": "systems tools",
+      "catmapping": "Repeatable",
+      "question": "We have a repeatable way to demonstrate our full capability, in a way which is engaging and effective",
+      "anwser": "Agree",
+      "score": 1
+    },
+    "digital-tools": {
+      "question_name": "ST4",
+      "category": "systems tools",
+      "catmapping": "Scalable",
+      "question": "Our team have access to the digital & online tools they need to run effective outbound activity",
+      "anwser": "Agree",
+      "score": 1
+    },
+    "crm-implementation": {
+      "question_name": "ST5",
+      "category": "systems tools",
+      "catmapping": "Scalable",
+      "question": "We have a CRM implemented which allows us to run an efficient sales organisation, including pipeline management",
+      "anwser": "Agree",
+      "score": 1
+    }
+  }
+}

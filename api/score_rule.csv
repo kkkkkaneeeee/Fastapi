@@ -1,0 +1,35 @@
+﻿question_id,Weighting +25%,Weighting +25%,Weighting +25%,Weighting +25%
+question_00,R2 - A or B,R3 - A or C,R4 - B,R12 - B or C
+question_01,R2 - A or B,R3 - A or C,R4 - B,R12 - B or C
+question_02,R2 - A or B,R3 - A or C,R4 - B,R12 - B or C
+question_03,R2 - A or B,R3 - A or C,R4 - A or B,R12 - B or C
+question_04,R2 - B or C,R3 - C,R12 - B or C,R16 - B or C
+question_05,R3 - C,R4 - A or B,R5 - A,R9 - A or B
+question_06,R3 - B,R4 - C,R5 - A,R13 - C
+question_07,R2 - C,R3 - A or B,R9 - A or B,R12 - A
+question_08,R4 - C,R7 - C,R10 - C,R11 - C
+question_09,R2 - B or C,R4 - A or B,R14 - C,R16 - B or C
+question_10,R3 - A,R6 - C,R12 - B or C,R16 - B or C
+question_11,R3 - A,R6 - C,R11 - A or B,R12 - B or C
+question_12,R3 - B or C,R8 - C,R10 - A,R16 - B or C
+question_13,R2 - C,R3 -B or C,R6 - B or C,R15 - B or C
+question_14,R3 - A,R5 - B or C,R13 - B or C,R16 - B or C
+question_15,R3 - C,R4 - B,R12 - B or C,R16 - B or C
+question_16,R1 - B or C,R2 - B or C,R3 - B,R4 - B
+question_17,R2 -A or B,R3 - A or C,R10 - B or C,R15 - B or C
+question_18,R2 - B or C,R3 - A,R12 - B or C,R14 - B or C
+question_19,R1 A,R3 - A,R6 - C,R14 - B or C
+question_20,R3 - A or C,R4 - B,R12 - B or C,R13 - B or C
+question_21,R2 - A or B,R3 - A or C,R4 - A,R13 - B or C
+question_22,R3 - A or C,R4 - A or C,R8 - C,R12 - B or C
+question_23,R1 - A,R3 - B,R6 - C,R10 - A
+question_24,R2 - B or C,R4 - A or B,R6 - C,R11 - C
+question_25,R2 - B or C,R6 - C,R11 - C,R13 - B or C
+question_26,R3 - A or C,R6 - C,R13 - B or C,R15 - B or C
+question_27,R6 - C,R11 - C,R13 - B or C,R16 - C
+question_28,R3 - A,R6 - B or C,R11 - C,R13 - B or C
+question_29,R6 - C,R12 - B or C,R13 - B or C,R16 - B or C
+question_30,R2 - B or C,R3 - C,R4 - B,R8 - C
+question_31,R2 - B or C,R3 - C,R4 - B,R10 - B or C
+question_32,R3 - C,R4 - B,R6 - C,R7 - C
+question_33,R4 - A or C,R6 - C,R12 - B or C,R16 - B or C
