@@ -88,9 +88,9 @@ async def batch_enhance(request: AssessmentData):
             new_score = original_score
         q['new_score'] = new_score
         # 新分类
-        if new_score < -1.25:
+        if new_score < -1:
             q['new_category'] = 'Start_Doing'
-        elif new_score > 1.25:
+        elif new_score > 1:
             q['new_category'] = 'Keep_Doing'
         else:
             q['new_category'] = 'Do_More'
