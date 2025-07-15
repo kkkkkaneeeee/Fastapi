@@ -2,12 +2,14 @@ import os
 import csv
 import openai
 from fastapi import FastAPI, Request, HTTPException
-from api.models import AssessmentData, AssessmentResponse
+from api.models import AssessmentData , SaveReportResponse , LLMAdviceRequest , LLMAdviceResponse
 from dotenv import load_dotenv
 from api.prompts import SYSTEM_PROMPT_TEMPLATE, USER_PROMPT_TEMPLATE
 from api.cosmos_retriever import get_answer_text
 from collections import defaultdict
 from fastapi.middleware.cors import CORSMiddleware
+from datetime import datetime
+from pydantic import BaseModel
 
 load_dotenv()
 
@@ -15,7 +17,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # 或指定前端地址
+    allow_origins=["http://localhost:3000"],  # 或指定前端地址
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -61,9 +63,26 @@ def check_weighting(rules, service_offering):
             return False
     return True
 
-@app.post("/api/llm-advice")
-async def batch_enhance(request: AssessmentData):
-    frontend_data = request.dict()  # 直接用 Pydantic 的 dict() 方法
+# 1. 保存用户报告
+@app.post("/api/save-user-report", response_model=SaveReportResponse)
+async def save_user_report(data: AssessmentData):
+    print("收到数据", data.dict())
+    # 这里可以保存到数据库或文件
+    return {
+        "status": "success",
+        "message": "Report saved successfully",
+        "timestamp": datetime.utcnow().isoformat()
+    }
+
+
+
+
+
+
+@app.post("/api/llm-advice", response_model=LLMAdviceResponse)
+async def get_llm_advice(request: LLMAdviceRequest):
+    print("收到评估数据：", request.dict()) 
+    frontend_data = request.dict()
     service_offering = frontend_data['serviceOffering']
     score_rules = load_score_rules('api/score_rule.csv')
     all_questions = []
@@ -125,15 +144,17 @@ async def batch_enhance(request: AssessmentData):
             llm_response = response.choices[0].message.content
         except Exception as e:
             llm_response = f"LLM生成失败: {e}"
-        results.append({
-            "question_id": question_id,
-            "catmapping": q.get('catmapping', ''),
-            "category": new_category,
-            "enhanced_answer": llm_response,
-            "retrieved_base_text": base_text
-        })
-    # 4. 按catmapping分组输出
-    grouped = defaultdict(list)
-    for r in results:
-        grouped[r['catmapping']].append(r)
-    return grouped
+        results.append(llm_response)
+
+    # 拼接所有建议为一段文本
+    advice_text = "\n\n".join(results)
+    # 你可以在 advice_text 前加上标题或总结
+    advice_text = (
+        "Based on your assessment results, I provide the following business recommendations:\n\n"
+        + advice_text
+    )
+    print("LLM生成的建议:\n", advice_text)
+    return {
+        "advice": advice_text,
+        "timestamp": datetime.utcnow().isoformat()
+    }
