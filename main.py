@@ -83,11 +83,12 @@ async def save_user_report(data: AssessmentData):
 async def get_llm_advice(request: LLMAdviceRequest):
     print("收到评估数据：", request.dict()) 
     frontend_data = request.dict()
-    service_offering = frontend_data['serviceOffering']
+    assessment_data = frontend_data['assessmentData']
+    service_offering = assessment_data['serviceOffering']
     score_rules = load_score_rules('api/score_rule.csv')
     all_questions = []
     # 1. 收集所有问题，按顺序编号
-    for section_key, section in frontend_data.items():
+    for section_key, section in assessment_data.items():
         if section_key == "serviceOffering":
             continue
         for q in section.values():
