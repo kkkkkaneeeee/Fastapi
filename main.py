@@ -124,7 +124,7 @@ async def get_llm_advice(request: LLMAdviceRequest):
             base_text = "未找到数据库答案。"
         # 构建prompt
         prompt = USER_PROMPT_TEMPLATE.format(
-            industry=service_offering['industry']['text'],
+            industry=service_offering.get('industry', {}).get('text', ''),
             original_question=q.get('question', ''),
             retrieved_text=base_text,
             advice_type=new_category,
@@ -145,17 +145,43 @@ async def get_llm_advice(request: LLMAdviceRequest):
             llm_response = response.choices[0].message.content
         except Exception as e:
             llm_response = f"LLM生成失败: {e}"
-        results.append(llm_response)
+        results.append({
+            "catmapping": q.get("catmapping", ""),
+            "category": q.get("category", ""),
+            "question": q.get("question", ""),
+            "advice": llm_response
+        })
 
-    # 拼接所有建议为一段文本
-    advice_text = "\n\n".join(results)
-    # 你可以在 advice_text 前加上标题或总结
-    advice_text = (
-        "Based on your assessment results, I provide the following business recommendations:\n\n"
-        + advice_text
-    )
+    # 4. 分阶段、分category分组
+    phase_map = {
+        "Profitable": "Phase 1 (Profitable)",
+        "Repeatable": "Phase 2 (Repeatable)",
+        "Scalable": "Phase 3 (Scalable)"
+    }
+    phase_order = ["Profitable", "Repeatable", "Scalable"]
+
+    # phase -> category -> [advice]
+    phase_grouped = {phase: defaultdict(list) for phase in phase_order}
+    for item in results:
+        phase = item["catmapping"]
+        category = item["category"]
+        if phase in phase_grouped:
+            phase_grouped[phase][category].append(item)
+
+    # 5. 拼接建议文本
+    advice_text = "Based on your assessment results, here are your business recommendations:\n\n"
+    for phase in phase_order:
+        phase_title = phase_map[phase]
+        advice_text += f"=== {phase_title} ===\n"
+        for category, items in phase_grouped[phase].items():
+            advice_text += f"\n【{category}】\n"
+            for item in items:
+                advice_text += f"- {item['question']}\n  {item['advice']}\n"
+        advice_text += "\n"
+
     print("LLM生成的建议:\n", advice_text)
     return {
         "advice": advice_text,
-        "timestamp": datetime.utcnow().isoformat()
+        "timestamp": datetime.utcnow().isoformat(),
+        "confidence_score": 0.85
     }
