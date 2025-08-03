@@ -87,6 +87,13 @@ async def get_llm_advice(request: LLMAdviceRequest):
     service_offering = assessment_data['serviceOffering']
     score_rules = load_score_rules('api/score_rule.csv')
     all_questions = []
+    
+    # Extract business profile fields from service offering
+    industry = service_offering.get('industry', {}).get('text', '')
+    business_challenge = service_offering.get('business_challenge', {}).get('text', '')
+    service_type = service_offering.get('service_type', {}).get('text', '')
+    revenue_type = service_offering.get('revenue_type', {}).get('text', '')
+    
     # 1. 收集所有问题，按顺序编号
     for section_key, section in assessment_data.items():
         if section_key == "serviceOffering":
@@ -122,13 +129,15 @@ async def get_llm_advice(request: LLMAdviceRequest):
         base_text = get_answer_text(question_id, new_category)
         if base_text is None:
             base_text = "未找到数据库答案。"
-        # 构建prompt
+        # 构建prompt with new business profile fields
         prompt = USER_PROMPT_TEMPLATE.format(
-            industry=service_offering.get('industry', {}).get('text', ''),
+            industry=industry,
+            business_challenge=business_challenge,
+            service_type=service_type,
+            revenue_type=revenue_type,
             original_question=q.get('question', ''),
             retrieved_text=base_text,
             advice_type=new_category,
-            query=q.get('question', ''),
             user_answer=q.get('anwser', '')
         )
         # 调用LLM
@@ -136,7 +145,7 @@ async def get_llm_advice(request: LLMAdviceRequest):
             response = client.chat.completions.create(
                 model=os.getenv("AZURE_OPENAI_DEPLOYMENT"),
                 messages=[
-                    {"role": "system", "content": SYSTEM_PROMPT_TEMPLATE},
+                    {"role": "system", "content": SYSTEM_PROMPT_TEMPLATE.format(industry=industry)},
                     {"role": "user", "content": prompt}
                 ],
                 temperature=0.7,
