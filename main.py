@@ -135,25 +135,26 @@ async def get_llm_advice(request: LLMAdviceRequest):
             base_text = "未找到数据库答案。"
         # 构建prompt with new business profile fields
         prompt = USER_PROMPT_TEMPLATE.format(
-            industry=industry,
-            business_challenge=business_challenge,
-            service_type=service_type,
-            revenue_type=revenue_type,
             original_question=q.get('question', ''),
             retrieved_text=base_text,
             advice_type=new_category,
             user_answer=q.get('anwser', '')
         )
-        # 调用LLM
+        # 调用LLM处理这一批问题
         try:
             response = client.chat.completions.create(
                 model=os.getenv("AZURE_OPENAI_DEPLOYMENT"),
                 messages=[
-                    {"role": "system", "content": SYSTEM_PROMPT_TEMPLATE.format(industry=industry)},
+                    {"role": "system", "content": SYSTEM_PROMPT_TEMPLATE.format(
+                        industry=industry,
+                        business_challenge=business_challenge,
+                        service_type=service_type,
+                        revenue_type=revenue_type
+                    )},
                     {"role": "user", "content": prompt}
                 ],
                 temperature=0.7,
-                max_tokens=512
+                max_tokens=1024  # 增加token数量以处理更多内容
             )
             llm_response = response.choices[0].message.content
         except Exception as e:
